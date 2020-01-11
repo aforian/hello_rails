@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts, only: [:index, :show]
   resources :users
+
+  # 練習
+  get 'cyberbiz', to: redirect('https://www.cyberbiz.co/')
+  get '/about.php', to: 'pages#about'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
